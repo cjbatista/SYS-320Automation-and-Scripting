@@ -22,7 +22,16 @@ function getNotEnabledUsers(){
 
 }
 
+function checkUser($name){
 
+    $users = Get-LocalUser
+    
+    if ($users.Name -contains $name) {
+        return $true
+    }
+
+    return $false 
+}
 
 
 <# ******************************
