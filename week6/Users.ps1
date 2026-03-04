@@ -22,16 +22,7 @@ function getNotEnabledUsers(){
 
 }
 
-function checkUser($name){
 
-    $users = Get-LocalUser
-    
-    if ($users.Name -contains $name) {
-        return $true
-    }
-
-    return $false 
-}
 
 
 <# ******************************
@@ -77,8 +68,21 @@ function disableAUser($name){
 
 
 function enableAUser($name){
-   
+
    $userToBeEnabled = Get-LocalUser | Where-Object { $_.name -ilike $name }
    Enable-LocalUser $userToBeEnabled
-   
+
+}
+
+
+function checkUser($name){
+
+   $user = Get-LocalUser | Where-Object { $_.name -ilike $name }
+
+   if ($user) {
+      return $true
+   } else {
+      return $false
+   }
+
 }
