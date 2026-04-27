@@ -1,0 +1,31 @@
+Deliverable 1 – xmlstarlet command explanations
+
+Command 1: xmlstarlet format --html --recover 2>/dev/null
+
+This command is used to clean up messy HTML and turn it into something closer to proper XML so it can be processed correctly.
+
+- format: organizes the structure and fixes indentation
+- --html: tells xmlstarlet the file is HTML, not strict XML
+- --recover: tries to fix broken or badly formatted HTML instead of stopping
+- 2>/dev/null: hides error messages so the output stays clean
+
+
+Command 2: xmlstarlet select --template --copy-of "//html//body//div//div//table//tr"
+
+This command pulls out specific parts of the HTML using an XPath expression.
+
+- select: runs a query on the file
+- --template: sets up how the output is structured
+- --copy-of: copies the entire element, including its tags and everything inside it
+- "//html//body//div//div//table//tr": this path goes through the HTML and selects all table rows (<tr> elements)
+
+
+--copy-of vs --value-of
+
+- --copy-of returns the full element with tags included
+  Example: <tr><td>CSI 230</td><td>Linux</td></tr>
+
+- --value-of only returns the text inside, without any tags
+  Example: CSI 230 Linux
+
+The script uses --copy-of because later commands (like sed) depend on the HTML tags (like </tr> and </td>) to separate rows and columns. If those tags were removed, the script wouldn't work properly.
