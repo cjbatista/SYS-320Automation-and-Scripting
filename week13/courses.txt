@@ -1,3 +1,4 @@
+<th>Number</th><th>Course Title</th><th>Credit</th><th>Seats</th><th>Days</th><th>Times</th><th>Instructor</th><th>Dates</th><th>Prerequisite(s)</th><th>Location</th>
 ACC 135-51;Accounting for Decision Making;3;11;T;5:30PM-8:15PM;Kelli-Jo Cloutier; 1/12 - 5/01;None;GBTC 112;
 ACC 231-51;Intermediate Accounting II;3;19;TH;5:30PM-8:15PM;Cathy Duffy; 1/12 - 5/01;ACC-230;GBTC 114;
 ACC 345-01;Cost Accounting;3;13;M;4PM-6:45PM;John Padgett; 1/12 - 5/01;Complete ACC-135;GBTC 112;
